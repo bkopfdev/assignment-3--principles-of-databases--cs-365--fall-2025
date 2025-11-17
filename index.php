@@ -78,16 +78,18 @@
                     <option value="accounts_at">Accounts at</option>
                 </select>
             </p>
-                <p>
+
+            <p>
                 <label for="search-key">Keyword:</label>
                 <input required type="text" id="search-key" name="search-key">
             </p>
+
             <p><input type="hidden" name="button-value" value="6"></p> <!-- First submit button, this one with value 6 (the search function)-->
             <p><input id="search" type="submit" value="Search" /></p>
         </fieldset>
     </form>
 
-        <!-- The INSERT USER operation ====================================== -->
+    <!-- The INSERT USER operation ====================================== -->
     <form id = "insert-user" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
             <legend>INSERT NEW USER</legend>
@@ -96,10 +98,12 @@
                 <label for="user">Username:</label>
                 <input required type="text" id="user" name="user">
             </p>
+
             <p>
                 <label for="fname">First Name:</label>
                 <input required type="text" id="fname" name="fname">
             </p>
+
             <p>
                 <label for="lname">Last Name:</label>
                 <input required type="text" id="lname" name="lname">
@@ -110,7 +114,7 @@
         </fieldset>
     </form>
 
-        <!-- The INSERT WEBSITE operation ====================================== -->
+    <!-- The INSERT WEBSITE operation ====================================== -->
     <form id = "insert-website" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
             <legend>INSERT NEW WEBSITE</legend>
@@ -119,6 +123,7 @@
                 <label for="websiteName">Website Name:</label>
                 <input required type="text" id="websiteName" name="websiteName">
             </p>
+
             <p>
                 <label for="websiteUrl">URL:</label>
                 <input required type="text" id="websiteUrl" name="websiteUrl">
@@ -129,7 +134,7 @@
         </fieldset>
     </form>
 
-        <!-- The REGISTER ACCOUNT operation ====================================== -->
+    <!-- The REGISTER ACCOUNT operation ====================================== -->
     <form id = "register-account" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
             <legend>REGISTER ACCOUNT</legend>
@@ -138,28 +143,33 @@
                 <label for="userID">User ID:</label>
                 <input required type="text" id="userID" name="userID">
             </p>
+
             <p>
                 <label for="webID">Website ID:</label>
                 <input required type="text" id="webID" name="webID">
             </p>
+
             <p>
                 <label for="password">Password:</label>
                 <input required type="text" id="password" name="password">
             </p>
+
             <p>
                 <label for="email">Email:</label>
                 <input required type="email" id="email" name="email">
             </p>
+
             <p>
                 <label for="comment">Comment:</label>
                 <textarea id="message" name="comment"></textarea>
             </p>
+
             <p><input type="hidden" name="button-value" value="3"></p>
             <p><input id="register-account" type="submit" value="Register" /></p>
         </fieldset>
     </form>
 
-        <!-- The DELETE operation ====================================== -->
+    <!-- The DELETE operation ====================================== -->
     <form id = "delete" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
             <legend>DELETE a User, Website, or Account</legend>
@@ -173,6 +183,7 @@
                     <option value="accounts_at">Accounts at</option>
                 </select>
             </p>
+
             <p>
                 <label for = "delete-attribute">Attribute to match off of:</label> <!-- Dropdown for the various attributes. This, again, is used a few times.-->
                 <select name = "delete-attribute" id = "delete-attribute" required>
@@ -195,7 +206,7 @@
         </fieldset>
     </form>
 
-        <!-- The UPDATE operation ====================================== -->
+    <!-- The UPDATE operation ====================================== -->
     <form id = "update" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
             <legend>UPDATE a User, Website, or Account</legend>
@@ -208,6 +219,7 @@
                     <option value="accounts_at">Accounts at</option>
                 </select>
             </p>
+
             <p>
                 <label for = "update-attribute">Attribute to change:</label>
                 <select name = "update-attribute" id = "update-attribute" required>
@@ -225,6 +237,7 @@
                 <label for="new-value">New value:</label>
                 <input required type="text" id="new-value" name="new-value">
             </p>
+
             <p>
                 <label for = "pattern-attribute">Attribute to Search for:</label>
                 <select name = "pattern-attribute" id = "pattern-attribute" required>
@@ -239,9 +252,11 @@
                     <option value="password">Password</option>
                     <option value="comment">Comment</option>
                 </select>
+
                 <label for="pattern-value">Pattern search value:</label>
                 <input required type="text" id="pattern-value" name="pattern-value">
             </p>
+
             <p><input type="hidden" name="button-value" value="5"></p>
             <p><input id="update-attribute" type="submit" value="Update" /></p>
         </fieldset>
