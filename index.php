@@ -70,6 +70,7 @@
         <fieldset>
             <legend>SEARCH</legend>
             <p>Choose a table and write a keyword. It will then display all the rows with that keyword somewhere in it.</p>
+            <p>Leave the field blank to see entire table.</p>
             <p>
                 <label for="table-search">Which Table:</label>
                 <select name = "table-search" id = "table-search" required> <!-- Dropdown for the different tables (This is used a few times)-->
@@ -81,7 +82,7 @@
 
             <p>
                 <label for="search-key">Keyword:</label>
-                <input required type="text" id="search-key" name="search-key">
+                <input type="text" id="search-key" name="search-key">
             </p>
 
             <p><input type="hidden" name="button-value" value="6"></p> <!-- First submit button, this one with value 6 (the search function)-->
