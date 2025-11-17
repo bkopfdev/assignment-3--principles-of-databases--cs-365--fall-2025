@@ -93,7 +93,7 @@
     <!-- The INSERT USER operation ====================================== -->
     <form id = "insert-user" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
-            <legend>INSERT NEW USER</legend>
+            <legend>INSERT a New User</legend>
             <p>Creates a user in the "users" table.</p>
             <p>
                 <label for="user">Username:</label>
@@ -118,7 +118,7 @@
     <!-- The INSERT WEBSITE operation ====================================== -->
     <form id = "insert-website" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
-            <legend>INSERT NEW WEBSITE</legend>
+            <legend>INSERT a New Website</legend>
             <p>Creates a website in the "websites" table.</p>
             <p>
                 <label for="websiteName">Website Name:</label>
@@ -138,8 +138,8 @@
     <!-- The REGISTER ACCOUNT operation ====================================== -->
     <form id = "register-account" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <fieldset>
-            <legend>REGISTER ACCOUNT</legend>
-            <p>Relates a user to a website with a password, comment, and automatically created timestamp.</p>
+            <legend>INSERT a New Account Registration</legend>
+            <p>Relates a user to a website with a password, email, comment (optional), and automatically created timestamp.</p>
             <p>
                 <label for="userID">User ID:</label>
                 <input required type="text" id="userID" name="userID">
