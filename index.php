@@ -56,7 +56,7 @@
                     header('Location: ' . $_SERVER['PHP_SELF']);
                     break;
 
-                case '6': // Searchs rows for a key word (Although this is the last on this branch, its the first one in the file. This was just me realizing that the search function should be at the top, as its likly to be used most often)
+                case '6': // Searchs rows for a key word (Although this is the last on this branch, its the first one in the file. This was just me realizing that the search function should be at the top, as its likly to be used most often, despite me writing it last)
                     search($_POST['table-search'] ?? '', $_POST['search-key'] ?? '');
                     break;
             }
