@@ -289,8 +289,9 @@ function search($table, $search_key) {
             echo "</table>";
         }
 
+        # Full transparency: There is a slight issue with the query that gets the password to print to the user. I've rewritten the line about a hundred times, and this was the best way I could get it to kind of work. It wont print all the passwords like it should, but if you add any new users into the database, it will show you those passwords. I have no idea why it wont show all of them, but I unfortunately caught this issue too late for me to ask you for help.
         elseif ("accounts_at" === $table) {
-            $query = "SELECT userId, webId, password, email, comment FROM accounts_at WHERE userId LIKE '%{$search_key}%' OR webId LIKE '%{$search_key}%' OR email LIKE '%{$search_key}%' OR comment LIKE '%{$search_key}%'";
+            $query = "SELECT userId, webId, CAST(AES_DECRYPT(password,'" . KEY_STR . "','" . INIT_VECTOR . "') AS CHAR), email, comment FROM accounts_at WHERE userId LIKE '%{$search_key}%' OR webId LIKE '%{$search_key}%' OR email LIKE '%{$search_key}%' OR comment LIKE '%{$search_key}%'";
             $statement = $db -> prepare($query);
             $statement -> execute();
             $statement = null;
