@@ -6,9 +6,9 @@
  * Takes in a username, the first name, and last name.
  * Inserts a new user into the users database with that information
  *
- * @param string $username Username of the user that will be added
- * @param string $fname The first name of the user that will be added
- * @param string $lname The last name of the user that will be added
+ * @param $username Username of the user that will be added
+ * @param $fname The first name of the user that will be added
+ * @param $lname The last name of the user that will be added
  *
 */
 function insert_user($username, $fname, $lname) {
@@ -43,8 +43,8 @@ function insert_user($username, $fname, $lname) {
  *
  * Takes a website name and URL. Inserts it into the websites table.
  *
- * @param string $websiteName The name of the website that will be added
- * @param string $websiteURL The URL of the website that will be added
+ * @param $websiteName The name of the website that will be added
+ * @param $websiteURL The URL of the website that will be added
  *
  */
 function insert_website($websiteName, $websiteURL) {
@@ -80,11 +80,11 @@ function insert_website($websiteName, $websiteURL) {
  * Takes in a user id, web id, password, email, and comment.
  * Inserts information into the account_at table, which is the relation between users and websites.
  *
- * @param string $userId The user id of the account that will be linked
- * @param string $webId The web id of the account that will be linked
- * @param string $password The password of the account that will be linked
- * @param string $email The email of the account that will be linked
- * @param string $comment The comment of the account that will be linked
+ * @param $userId The user id of the account that will be linked
+ * @param $webId The web id of the account that will be linked
+ * @param $password The password of the account that will be linked
+ * @param $email The email of the account that will be linked
+ * @param $comment The comment of the account that will be linked
  *
  */
 function register_account_at($userId, $webId, $password, $email, $comment) {
@@ -124,9 +124,9 @@ function register_account_at($userId, $webId, $password, $email, $comment) {
  * If the user chooses to delete a user or website via their userId or webId, the program will
  * also delete the entries associated with that user or website in the accounts_at table.
  *
- * @param string $table The table to delete from
- * @param string $attribute The attribute to match on
- * @param string $pattern_match The value to match on
+ * @param $table The table to delete from
+ * @param $attribute The attribute to match on
+ * @param $pattern_match The value to match on
  *
  */
 function delete($table, $attribute, $pattern_match) {
@@ -179,11 +179,11 @@ function delete($table, $attribute, $pattern_match) {
  * Updates an entry in the table by using a pattern attribute.
  * Replaces the attribute given with the new value, in an entry where the pattern attribute matches the pattern value.
  *
- * @param string $table The table to update
- * @param string $attribute The attribute to update
- * @param string $new_value The new value to set the attribute to
- * @param string $pattern_attribute The attribute to match the row on
- * @param string $pattern_value The value to match on
+ * @param $table The table to update
+ * @param $attribute The attribute to update
+ * @param $new_value The new value to set the attribute to
+ * @param $pattern_attribute The attribute to match the row on
+ * @param $pattern_value The value to match on
  *
  */
 function update($table, $attribute, $new_value, $pattern_attribute, $pattern_value) {
@@ -216,8 +216,8 @@ function update($table, $attribute, $new_value, $pattern_attribute, $pattern_val
  *
  * Takes in a table and key, and will generate an HTML table of the related entries where the key is somewhere in the row.
  *
- * @param string $table The table to search
- * @param string $search_key The key to search for
+ * @param $table The table to search
+ * @param $search_key The key to search for
  *
  */
 function search($table, $search_key) {
