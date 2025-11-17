@@ -185,7 +185,7 @@
             </p>
 
             <p>
-                <label for = "delete-attribute">Attribute to match off of:</label> <!-- Dropdown for the various attributes. This, again, is used a few times.-->
+                <label for = "delete-attribute">Attribute to match off:</label> <!-- Dropdown for the various attributes. This, again, is used a few times.-->
                 <select name = "delete-attribute" id = "delete-attribute" required>
                     <option value="userId">User ID</option>
                     <option value="webId">Web ID</option>
