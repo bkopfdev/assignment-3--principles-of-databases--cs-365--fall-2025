@@ -16,16 +16,18 @@
     <input id="reset-form" type="submit" value="Reset Fields / Return Home">
 </form>
 
-<!-- <form id="insert-account" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post"> -->
 <?php
     require_once 'includes/config.php';
     require_once 'includes/helpers.php';
 
+    // When there is a POST request. . .
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $option = $_POST['button-value'] ?? null;
-
         // Handles the different submit buttons on the page.
         // Each button has a different "button-value", which is used to determine which function to call in helpers.php.
+
+        // This was structured this way also to combat an issue I had with refreshing the page. Sometimes when I refreshed, it would POST whatever the last thing I POSTed was. This was a simple way to fix that issue, as it refreshes the page after each POST request (excluding the search function, because the user is already redirected to a different page for that).
+        $option = $_POST['button-value'] ?? null;
+
         if ($option !== null) {
             switch ($option) {
                 case '1': // Inserts a new user into the users table

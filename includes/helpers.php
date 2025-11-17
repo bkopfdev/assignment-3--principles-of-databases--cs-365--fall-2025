@@ -245,7 +245,8 @@ function search($table, $search_key) {
             echo "<tbody>";
 
             # Iterates through the results of the query written at the top, and prints the results out into the table.
-            foreach ($db ->query($query) as $row) {
+            $query_result = $db -> query($query);
+            foreach ($query_result as $row) {
                 echo "<tr>";
                 echo "  <td>" . htmlspecialchars((string)($row[2] ?? '')) . "</td>";
                 echo "  <td>" . htmlspecialchars($row[0]) . "</td>";
@@ -274,7 +275,8 @@ function search($table, $search_key) {
             echo "<tbody>";
 
             # Same as written above
-            foreach ($db ->query($query) as $row) {
+            $query_result = $db -> query($query);
+            foreach ($query_result as $row) {
                 echo "<tr>\n";
                 echo "  <td>" . htmlspecialchars((string)($row[0] ?? '')) . "</td>";
                 echo "  <td>" . htmlspecialchars($row[1]) . "</td>";
@@ -305,7 +307,8 @@ function search($table, $search_key) {
             echo "<tbody>\n";
 
             # Same as written above
-            foreach ($db ->query($query) as $row) {
+            $query_result = $db -> query($query);
+            foreach ($query_result as $row) {
                 echo "<tr>";
                 echo "  <td>" . htmlspecialchars((string)($row[0] ?? '')) . "</td>";
                 echo "  <td>" . htmlspecialchars((string)($row[1] ?? '')) . "</td>";
