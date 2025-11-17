@@ -121,6 +121,8 @@ function register_account_at($userId, $webId, $password, $email, $comment) {
  * delete($table, $attribute, $pattern_match)
  *
  * Deletes an entry from the given table, where the given attribute matches the pattern
+ * If the user chooses to delete a user or website via their userId or webId, the program will
+ * also delete the entries associated with that user or website in the accounts_at table.
  *
  * @param string $table The table to delete from
  * @param string $attribute The attribute to match on
@@ -144,6 +146,18 @@ function delete($table, $attribute, $pattern_match) {
             $statement = $db -> prepare("DELETE FROM `{$table}` WHERE `{$attribute}` = \"{$pattern_match}\"");
         }
         $statement -> execute();
+
+        # If you were to delete a user using their userId, the program will delete all the accounts_at entries associated to that user.
+        if($table === 'users' && $attribute === 'userId') {
+            $statement = $db -> prepare("DELETE FROM accounts_at WHERE userId = \"{$pattern_match}\"");
+            $statement -> execute();
+        }
+
+        # Does the same thing as above, but instead with the websites
+        if($table === 'websites' && $attribute === 'webId') {
+            $statement = $db -> prepare("DELETE FROM accounts_at WHERE webId = \"{$pattern_match}\"");
+            $statement -> execute();
+        }
 
         $statement = null;
     }
