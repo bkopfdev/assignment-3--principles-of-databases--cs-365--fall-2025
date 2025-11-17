@@ -27,7 +27,6 @@ function insert_user($username, $fname, $lname) {
         $statement = null;
     }
     catch(PDOException $error) {
-        // echo "Error: " . $error -> getMessage();
         echo "<p class='highlight'>The function " .
             "<code>valueExistsInAttribute</code> has generated the " .
             "following error:</p>" .
@@ -64,7 +63,6 @@ function insert_website($websiteName, $websiteURL) {
         $statement = null;
     }
     catch(PDOException $error) {
-        // echo "Error: " . $error -> getMessage();
         echo "<p class='highlight'>The function " .
             "<code>valueExistsInAttribute</code> has generated the " .
             "following error:</p>" .
@@ -104,7 +102,6 @@ function register_account_at($userId, $webId, $password, $email, $comment) {
         $statement = null;
     }
     catch(PDOException $error) {
-        // echo "Error: " . $error -> getMessage();
         echo "<p class='highlight'>The function " .
             "<code>valueExistsInAttribute</code> has generated the " .
             "following error:</p>" .
@@ -322,7 +319,6 @@ function search($table, $search_key) {
         }
 
     } catch(PDOException $error) {
-        // echo "Error: " . $error -> getMessage();
         echo "<p class='highlight'>The function " .
             "<code>valueExistsInAttribute</code> has generated the " .
             "following error:</p>" .
